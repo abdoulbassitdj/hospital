@@ -1,0 +1,26 @@
+:root{
+    --dark : #03045E;
+    --2nd : #0077B6;
+    --3rd : #00B4D8;
+    --4th : #90E0EF;
+    --light : #CAF0F8;
+    --cta : #FF3C00;
+}
+
+@font-face {
+    font-family: "roboto";
+    src: url(/hospital/assets/fonts/roboto/Roboto-Regular.ttf),
+    url(/hospital/assets/fonts/roboto/Roboto-Light.ttf),
+    url(/hospital/assets/fonts/roboto/Roboto-Bold.ttf);
+}
+
+:root{
+    --font: roboto;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: roboto;
+}

@@ -1,0 +1,153 @@
+main{
+    width: 100%;
+    min-height: 100vh;
+    padding-top: 4rem;
+    display: flex;
+}
+
+/* .txt:after{
+    content:"";
+    width: 100%;
+    height: 100%;
+    display: block;
+    background: #000000;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: .3;
+} */
+
+form{
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: #FFFFFF;
+}
+
+.group_submit{
+    width: 80%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    /* padding-left: 1rem; */
+    margin-top: 1rem;
+    /* background: red; */
+}
+
+.connect input:not([type="submit"]){
+    width: 80%;
+    height: 3rem;
+    margin: 1rem 0;
+    padding: .5rem;
+    background: transparent;
+    /* border: transparent; */
+    border: 1px solid #000000;
+    font-size: 1.3rem;
+}
+
+.connect input:not([type="submit"]):focus{
+    border: none;
+    outline: 1px solid #08C5BB;
+}
+
+.link_forgot{
+    width: 80%;
+    display: flex;
+    justify-content: flex-end;
+    /* background: red; */
+}
+
+.link_forgot a{
+    color: #a1a1a1;
+}
+
+input::placeholder{
+    color: #a1a1a1;
+    font-family: sans-serif;
+    font-size: 1rem;
+}
+
+.group_submit input,.connect button{
+    width: 25%;
+    height: 2rem;
+    border-radius: 15px;
+    border: 1px solid transparent;
+    background: #012FFF;
+    color: #000000;
+    font-weight: bold;
+}
+
+input[type="submit"]{
+    color: #FFFFFF;
+}
+
+.connect button{
+    width: 45%;
+    margin-left: 1rem;
+    border: 1px solid #000000;
+    background: transparent;
+}
+
+a{
+    color: #000000;
+    text-decoration: none;
+}
+
+.txt{
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: #c5c5c5;
+    /* background: url(../images/illustrations/29bfa83d012107137ffd96793cb1f787.jpg) center; */
+    background-size: cover;
+    position: relative;
+    /* box-shadow: inset 0 0 15px rgba(0, 0, 0, .5), inset -35px 0 30px rgba(24, 19, 73, 0.3); */
+}
+
+.central{
+    height: 30rem;
+    /* position: absolute;
+    top: 0;
+    right: 0; */
+    /* background: #08C5BB; */
+}
+
+h2{
+    text-align: center;
+    color: #000000;
+    margin-bottom: 2rem;
+}
+
+.status{
+    z-index: 3;
+}
+
+.status h2{
+    color: #FFFFFF;
+    text-transform: uppercase;
+    align-items: flex-start;
+}
+
+.petit{
+    position: absolute;
+    width: 3rem;
+}
+
+.right{
+    top: 15rem;
+    right: 8rem;
+}
+
+.left{
+    top: 4rem;
+    left: 7rem;
+}
+
+.third{
+    top: 11rem;
+    left: 13rem;
+}

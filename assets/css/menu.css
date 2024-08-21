@@ -1,0 +1,110 @@
+@font-face {
+    font-family: "open sans";
+    src: url("OpenSans-Regular.ttf");
+}
+
+@font-face {
+    font-family: "pinyon-script";
+    src: url("fonts/pinyonscript-regular.ttf");
+}
+
+@font-face {
+    font-family: "roboto";
+    src: url(fonts/roboto/Roboto-Regular.ttf);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+main{
+    padding-top: 4rem;
+}
+
+header {
+    width: 100%;
+    position: fixed;
+    z-index: 5;
+}
+
+nav{
+    width: 100%;
+    height: 4rem;
+    padding: 0 2rem;
+    background: #ffffff;
+    box-shadow: 1px 1px 5px #7e7e7e;
+}
+
+.menu_box {
+    display: flex;
+    justify-content: space-between;
+}
+
+.sous_menu_box{
+    width: 11rem;
+    padding: .5rem;
+    background: #ffffff;
+    border-top: 3px solid #007aa2;
+    display: none;
+    box-shadow: 1px 1px 5px #7e7e7e;
+}
+
+.sous_menu_box.menu_visible{
+    display: block;
+}
+
+.menu{
+    width: 11rem;
+    height: 4rem;
+    padding: 1.5rem 0;
+    display: flex;
+    display: inline-block;
+    color: rgb(0, 0, 0);
+    letter-spacing: 3px;
+    font-weight: bold;
+    text-decoration: none;
+    text-transform: capitalize;
+    text-align: center;
+    transition: .5s ease;
+}
+
+.menu:hover , .menu:active , .sous_menu:hover , .sous_menu:active{
+    animation: color_menu .5s ease-in forwards;
+}
+
+@keyframes color_menu {
+    0%{
+        color: #FFFFFF;
+    }
+    100%{
+        color: #007aa2;
+    }
+}
+
+.logo_box{
+    width: 10rem;
+    height: 4rem;
+    display: flex;
+    justify-content: center;
+    margin: 0 25rem 0 1rem;
+    overflow: hidden;
+}
+
+.logo{
+    height: 100%;
+    transform: scale(2);
+}
+
+.sous_menu{
+    padding: .5rem;
+    color: rgb(0, 0, 0);
+    transition: .5s ease-in-out;
+}
+
+li{
+    font-family: "open sans",helvetica;
+    list-style: none;
+    letter-spacing: 1px;
+}

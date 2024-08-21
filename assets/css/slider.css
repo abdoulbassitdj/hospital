@@ -1,0 +1,198 @@
+p{
+    font-family: roboto;
+}
+
+.container{
+    width: 100%;
+    height: 100vh;
+    /* padding-top: 4rem; */
+    background: gray;
+}
+
+.slider-container{
+    width: 100%;
+    height: 100%;
+    margin: auto;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.slider{
+    width: 100%;
+    height: 100%;
+    display: none;
+    animation: fade 1.5s;
+    overflow-y: hidden;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+/* img{
+    width: 100%;
+    height: 100%;
+    vertical-align: middle;
+} */
+
+.slider h2 {
+    font-size: 2.5rem;
+    color: #FFFFFF;
+}
+
+.people1,.people2{
+    background: url("../../images/slider1/people1_background.png.jpg") fixed;
+    background-size: cover;
+}
+
+.machine1{
+    background: url("../../images/slider1/2e9efcc7e2ec55a1a09e5a1fd59e1e6f.jpg") fixed;
+    background-size: cover;
+}
+
+.people1 img{
+    width: 19rem;
+    position: absolute;
+    bottom: 2rem;
+    right: 5rem;
+    z-index: 3;
+}
+
+.people1 > p{
+    width: 20rem;
+    height: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #012FFF;
+    position: absolute;
+    bottom: 0;
+    right: 5rem;
+    color: #FFFFFF;
+    font-size: 1rem;
+}
+
+
+.slider *{
+    z-index: 3;
+}
+
+.slider:not(.machine1)::after{
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: #012FFF;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: .5;
+    z-index: 0;
+}
+
+.people2 img{
+    width: 35rem;
+    position: absolute;
+    bottom: 0;
+    right: 5rem;
+}
+
+.machine1 img{
+    width: 15rem;
+    position: absolute;
+    bottom: 0;
+    left: 10rem;
+}
+
+.prev,.next{
+    width: 40px;
+    height: 60px;
+    font-size: 30px;
+    font-weight: bold;
+    color: rgb(195, 195, 195);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    position: absolute;
+    transition: all 0.3s ease;
+}
+
+.prev{
+    left: 2rem;
+}
+
+.next{
+    right: 2rem;
+}
+
+.lines{
+    position: absolute;
+    display: flex;
+    bottom: 10px;
+}
+
+.prev:hover,.next:hover{
+    color: #fff;
+}
+
+.line{
+    padding: 1.5px 10px;
+    margin: 0 3px;
+    background: rgb(24, 0, 129);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.actif,.line:hover{
+    background: rgb(255, 0, 0);
+}
+
+@keyframes fade {
+    from {
+        opacity:0;
+    }
+    to{
+        opacity:1;
+    }
+}
+
+.tconsellor{
+    width: 80%;
+    height: 100%;
+    /* background: red; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.people2 .tconsellor{
+    width: 70%;
+}
+
+.tconsellor button{
+    width: 10rem;
+    height: 3rem;
+    margin: 5rem .3rem;
+    color: #FFFFFF;
+    border: 3px solid #08C5BB;
+    font-size: 1.1rem;
+    transition: all 0.5s ease;
+}
+
+.people2 .tconsellor button{
+    width: 12rem;
+}
+
+.start, .register:hover{
+    background: none;
+}
+
+.start:hover, .register{
+    background: #08C5BB;
+}
+
+.tconsellor p{
+    font-size: 1.3rem;
+}

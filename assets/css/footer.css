@@ -1,0 +1,145 @@
+@font-face {
+    font-family: "open sans";
+    src: url("../fonts/OpenSans-Regular.ttf");
+}
+
+
+/* =============================== FOOTER =============================== */
+
+.foot * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "open sans" , sans-serif;
+    color: #b3b3b3;
+}
+
+.foot{
+    background: #1f1e1e;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.foot > div{
+    padding: 0 5rem;
+}
+
+.foot .contact , footer .links{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 1.5rem 8rem;
+}
+
+.foot hr{
+    width: 90%;
+}
+
+.links{
+    padding-bottom: 3rem;
+}
+
+.contact div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.links > div{
+    display: flex;
+    flex-direction: column;
+}
+
+.links h3{
+    margin-bottom: 1rem;
+    text-transform: capitalize;
+    color: #f1e9e9;
+}
+
+.links a{
+    margin: .1rem 0;
+}
+
+.contact i{
+    width: 2.5rem;
+    height: 2.5rem;
+    background: #08c5bb;
+    color: #FFFFFF;
+    font-size: 1.5rem;
+    text-align: center;
+    border-radius: 50%;
+    padding-top: .5rem;
+    margin-bottom: 1rem;
+}
+
+footer a{
+    text-decoration: none;
+}
+
+footer a:hover , address:hover{
+    color: #007aa2;
+}
+
+.icons{
+    padding: .5rem 1rem;
+    display: flex;
+    justify-content: center;
+}
+
+.icons div{
+    width: 2rem;
+    height: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 .5rem;
+    border: 2px solid #b3b3b3;
+    border-radius: 50%;
+}
+
+.copyright p{
+    text-align: center;
+}
+
+.newsletter{
+    position: relative;
+}
+
+.newsletter input{
+    height: 2.5rem;
+    border: 1px solid transparent;
+    border-radius: 3px;
+    padding-left: .5rem;
+    margin-bottom: .3rem;
+    color: #000000;
+    font-weight: bold;
+}
+
+.newsletter input::placeholder{
+    font-weight: bold;
+}
+
+.newsletter button{
+    width: 2rem;
+    height: 2rem;
+    position: absolute;
+    right: .25rem;
+    top: 2.75rem;
+    z-index: 3;
+    cursor: pointer;
+    background: #08c5bb;
+    border: 1px solid transparent
+}
+
+.newsletter i{
+    color: #ffffff;
+    font-size: 1.3rem;
+    font-weight: bold;
+}
+
+.social{
+    width: 100%;
+    background: #2e2d2c;
+}

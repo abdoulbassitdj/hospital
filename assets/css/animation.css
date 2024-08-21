@@ -1,0 +1,56 @@
+.reveal{
+    transform: translateY(100px);
+    opacity: 0;
+    transition: .5s ease-in-out;
+}
+
+.reveal.active{
+    transform: translateY(0rem);
+    opacity: 1;
+}
+
+.reveals_ext{
+    opacity: 0;
+    transform: scale(.95,.95);
+    transition: all 1.5s ease-out;
+}
+
+.reveals_ext.active{
+    opacity: 1;
+    transform: scale(1);
+}
+
+.reveal_right.active{
+    animation: appearR 1s ease-in-out forwards;
+}
+
+@keyframes appearR {
+    0%{
+        transform: translateX(40rem) skewX(0deg);
+    }
+    85%{
+        transform: translateX(-1.5rem) skewX(30deg);
+    }
+    95%{
+        transform: skewX(-50deg);
+    }
+    100%{
+        transform: translateX(0) translateY(-.6rem);;
+    }
+}
+
+.reveal_left{
+    animation: appearL .5s ease-in-out forwards;
+}
+
+@keyframes appearL {
+    0%{
+        transform: translateX(-5rem) skewX(0deg);
+    }
+    95%{
+        transform: translateX(1rem) skewX(-30deg);
+    }
+    100%{
+        transform: translateX(0);
+    }
+}

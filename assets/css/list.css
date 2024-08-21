@@ -1,0 +1,23 @@
+.service{
+    display: none;
+}
+
+.service.show{
+    display: flex;
+}
+
+.content{
+    display: none;
+}
+
+.content.show{
+    display: flex;
+}
+
+.data{
+    display: none;
+}
+
+.data.show{
+    display: flex;
+}

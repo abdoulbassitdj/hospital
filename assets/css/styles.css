@@ -1,0 +1,341 @@
+/* =============================== FONTS AND OTHERS ==================================*/
+
+@font-face {
+    font-family: roboto;
+    src: url("../../fonts/roboto/Roboto-Regular.ttf");
+}
+
+@font-face {
+    font-family: "open sans";
+    src: url(../../fonts/OpenSans-Regular.ttf);
+}
+
+main{
+    min-height:100vh;
+}
+
+button{
+    outline: none;
+}
+
+/* =============================== GENERALS SPECIFICATIONS ==================================*/
+
+main section {
+    padding: 3rem;
+    margin: 2rem 0;
+}
+
+h2{
+    text-transform: uppercase;
+    color: #000000;
+    font-family: "open sans";
+    font-weight: bold;
+    margin: .5rem;
+    text-align: center;
+}
+
+h3{
+    text-transform: capitalize;
+    font-family: "open sans";
+}
+
+h2 span {
+    color: #08C5BB;
+}
+
+button{
+    width: 5rem;
+    height: 2rem;
+    text-transform: uppercase;
+    font-weight: bold;
+    border-radius: 7px;
+}
+
+/* =============================== ABOUT SECTION ==================================*/
+
+.register a{
+    text-decoration: none;
+    color: #FFFFFF;
+}
+
+/* =============================== ABOUT SECTION ==================================*/
+
+.about1{
+    width: 100%;
+    height: max-content;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.about1 > *{
+    width: 45%;
+    margin: 0 .5rem;
+}
+
+.desc{
+    height: 28rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    /* background-color: red; */
+    position: relative;
+}
+
+.desc *{
+    margin: 1rem 0;
+}
+
+.desc button{
+    width: 7rem;
+    height: 3rem;
+    position: absolute;
+    bottom: 0;
+    margin: 0;
+    background: #08C5BB;
+    border: transparent;
+    color: #FFFFFF;
+    border-radius: 7px;
+}
+
+.about_img{
+    height: 28rem;
+    overflow: hidden;
+    border-radius: 25px 0 25px 0;
+}
+
+.about_img img{
+    width: 100%;
+}
+
+.desc h2{
+    text-align: center;
+}
+
+.desc p{
+    letter-spacing: 1px;
+    line-height: 1.5rem;
+}
+
+/* =============================== SERVICES SECTION ==================================*/
+
+/* main .services{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    background: #08C5BB;
+} */
+
+main .services > h2,.services > p{
+    text-align: center;
+}
+
+main .services h2 span{
+    color: #08C5BB;
+}
+
+main .services h2{
+    color: #000000;
+}
+
+.services_cont{
+    /* display: flex; */
+    padding-top: 1rem;
+}
+
+.services_cont *{
+    padding: 0 .3rem;
+}
+
+.services_list{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    /* flex-direction: column; */
+    padding: 0;
+    /* background: purple; */
+}
+
+.item{
+    width: 10rem;
+    height: 3rem;
+    margin: .5rem 0;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    background: #012FFF;
+    color: #FFFFFF;
+}
+
+.services_list h3{
+    /* color: white; */
+    background: transparent;
+    text-transform: uppercase;
+}
+
+.services_desc{
+    width: 100%;
+    display: none;
+    /* background: #012FFF; */
+    padding: 2rem 0;
+    border-radius: 15px;
+    box-shadow: 3px 3px 20px rgba(68, 45, 45, 0.3);
+}
+
+.services_cont .service.hide{
+    display: none;
+}
+
+.services_cont .service.show{
+    display: flex;
+    /* background: rgb(228, 150, 5); */
+    justify-content: space-evenly;
+}
+
+.services_desc .text{
+    width: 60%;
+}
+
+.services_desc .text h3{
+    color: #012FFF;
+    margin-bottom: 1rem;
+}
+
+.services_desc .text > p{
+    margin: .5rem 0;
+}
+
+.services_desc .img_container{
+    width: 18rem;
+    height: 12rem;
+    /* margin-left: 3rem; */
+    border-radius: 15px 0 15px 0;
+}
+
+/* .services_desc .img_container::after{
+    content: "";
+    width: 10rem;
+    height: 10rem;
+    background: #012FFF;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+} */
+
+.services_desc .img_container img {
+    width: 100%;
+    height: 100%;
+    border-radius: 15px 0 15px 0;
+    z-index: 2;
+    /* border: 5px solid #FFFFFF; */
+}
+
+/* =============================== DOCTORS SECTION ==================================*/
+
+/* .our_doctors{
+    background: #f8f8f8;
+} */
+
+.our_doctors > p{
+    text-align: center;
+}
+
+.doctors{
+    width: 100%;
+    display: flex;
+    margin-top: 2rem;
+    justify-content: center;
+    align-items: space-between;
+    flex-wrap: wrap;
+}
+
+.doctor{
+    width: 45%;
+    height: 13rem;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background: #FFFFFF;
+    margin: 1rem;
+    padding: 1rem;
+    box-shadow: 3px 3px 20px rgba(68, 45, 45, 0.3);
+    border-radius: 7px;
+    transition: 1s;
+}
+
+.doctor h3{
+    color: #08C5BB;
+}
+
+.doctor_status{
+    text-transform: capitalize;
+    position: relative;
+    padding-bottom: .5rem;
+    color: #012FFF;
+    transform: translateY(-.5rem);
+}
+
+.doctor_status::after{
+    content: "";
+    width: 15%;
+    height: 1px;
+    background: rgba(195, 195, 195, 0.5);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+.doctor_img{
+    width: 10rem;
+    height: 10rem;
+}
+
+.doctor_img img{
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
+}
+
+.doctor_txt{
+    width: calc(100% - 11rem);
+    height: 10rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    /* align-items: center; */
+    padding-left: 1rem;
+}
+
+.doctor_socials{
+    width: 50%;
+    /* height: 2rem; */
+    display: flex;
+    justify-content: space-between;
+}
+
+.doctor_socials span{
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+.doctor:hover{
+    /* animation: up 1s ease-in-out .1s reverse forwards;
+    animation-direction: alternate; */
+    transform: translateY(-.7rem);
+}
+
+/* @keyframes up {
+    0%{
+        transform: translateY(0);
+    }
+    100%{
+        transform: translateY(-.7rem);
+    }
+} */
+
+/* =============================== TESTIMONIALS SECTION ==================================*/
+

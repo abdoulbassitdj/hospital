@@ -1,0 +1,502 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+main{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    /* min-height: 100vh; */
+    /* background: red; */
+}
+
+main aside{
+    width: 15%;
+    height: 100vh;
+}
+
+main section{
+    width: 85%;
+    min-height: 100vh;
+    padding: 2rem;
+    background: rgb(246, 246, 246);
+}
+
+/*------------------------------------------- FOR ASIDE ----------------------------------------------*/
+
+/* .group{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+} */
+
+.item{
+    width: 100%;
+    height: 2.5rem;
+    padding: 1rem;
+    text-transform: capitalize;
+    cursor: pointer;
+}
+
+.item p{
+    height: 2rem;
+    display: flex;
+    align-items: center;
+}
+
+.item i{
+    margin: 0 .5rem;
+}
+
+.item.active p{
+    background-color: #08C5BB;
+    border-radius: 15px;
+    color: #FFFFFF;
+}
+
+.group:nth-child(1){
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 2rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.group img{
+    width: 5rem;
+    height: 5rem;
+    border-radius: 50%;
+    border: 2px solid #08C5BB;
+    margin-bottom: .5rem;
+}
+
+.group p:nth-of-type(1){
+    font-weight: bold;
+}
+
+.group p:nth-of-type(2){
+    color: #08C5BB;
+}
+
+/*------------------------------------------- FOR OVERVIEW ----------------------------------------------*/
+
+.overview{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.greeting{
+    width: 100%;
+    height: 10rem;
+    display: flex;
+    background: #0cece1;
+    padding: 1rem;
+    border-radius: 10px;
+}
+
+.greeting div:nth-child(1){
+    width: 60%;
+}
+
+.greeting div:nth-child(2){
+    width: 40%;
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+.greeting img{
+    height: 10rem;
+    position: absolute;
+    top: -2rem;
+}
+
+.greeting h2{
+    margin-bottom: 1rem;
+}
+
+.greeting button{
+    width: 8rem;
+    height: 2rem;
+    margin: 1rem 0;
+    background: transparent;
+    border: 1px solid #012FFF;
+}
+
+.greeting a{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    color: #012FFF;
+    text-decoration: none;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.infos{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.info {
+    width: calc((100%) / 4 - .75rem);
+    height: 5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: .5rem;
+    background: #FFFFFF;
+    border-radius: 15px;
+}
+
+.info > * {
+    height: 3rem;
+    display: flex;
+    justify-content: center;
+    /* align-items: center; */
+    flex-direction: column;
+}
+
+.info i{
+    width: 3rem;
+    background: #012FFF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #FFFFFF;
+    font-size: 2rem;
+    border-radius: 10px;
+    /* align-self: center; */
+}
+
+.info  div{
+    width: 60%;
+    /* background: blue; */
+}
+
+.info p{
+    font-size: small;
+}
+
+.info span{
+    font-size: larger;
+}
+
+.attente i{
+    background: #ff7c01;
+    color: white;
+}
+
+/* .info:nth-last-child(1){
+    height: 15rem;
+} */
+
+/*------------------------------------------- FOR RENDEZ VOUS ----------------------------------------------*/
+
+.rendez_vous{
+    flex-direction: column;
+    gap: 2rem;
+    /* background: red; */
+}
+
+.rendez_vous h4 span, .patients h4 span{
+    min-width: 2.5rem;
+    height: 2rem;
+    padding: 0.25rem;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    background: #012FFF;
+    color: #FFFFFF;
+    margin-right: 5px;
+    border-radius: 15px;
+}
+
+.rdvNegatives{
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    /* justify-content: center; */
+    /* align-items: center; */
+    gap: 2rem;
+    flex-wrap: wrap;
+    /* background: rgb(38, 0, 128); */
+    margin-top: 3rem;
+}
+
+.rdv{
+    width: calc(100% / 4 - 1.5rem);
+    height: 20rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: #FFFFFF;
+    position: relative;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 3px 3px 7px rgba(30, 30, 42, 0.3);
+}
+
+.rdv p:nth-of-type(4){
+    /* background: red; */
+    margin-bottom: 1.5rem;
+    margin-top: .5rem;
+}
+
+.rdvNegatives img{
+    width: 40%;
+    border-radius: 50%;
+}
+
+.purchaser{
+    margin: 1rem 1rem 0;
+    text-align: center;
+}
+
+.acceptation{
+    width: 100%;
+    height: 15%;
+    display: flex;
+    /* background: #7faca9; */
+    position: absolute;
+    bottom: 0;
+    border-top: 1px solid rgb(211, 211, 211);
+}
+
+.acceptation div{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background: purple; */
+    text-decoration: none;
+}
+
+.approve{
+    border-right: 1px solid rgb(211, 211, 211);
+    color: rgb(1, 228, 1);
+}
+
+.declined{
+    border-right: 1px solid rgb(211, 211, 211);
+    color: rgb(251, 45, 45);
+}
+
+.rdvMessage{
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+}
+
+.rdvMessage i{
+    font-size: 2rem;
+    color: rgb(1, 228, 1);
+}
+
+.dec i{
+    color: rgb(251, 45, 45);
+}
+
+.rdvMessage i:hover{
+    color: rgb(211, 211, 211);
+    cursor: pointer;
+}
+
+.appointPlan{
+    width: 100%;
+    display: flex;
+    height: calc(100vh - 4rem);
+    /* background: rgb(29, 185, 42); */
+    margin-top: 2rem;
+    /* box-shadow: -0 0 15px #0e0e14; */
+}
+
+.calendrier{
+    width: 70%;
+    height: 100%;
+    background: red;
+}
+
+.calendrier .calendar{
+    width: 100%;
+    height: 100%;
+    background: #1f1e1e;
+}
+
+.calendrier .weekdays{
+    height: 15%;
+    font-weight: bolder;
+    padding: 0.3rem;
+}
+
+.calendrier .days{
+    height: 85%;
+    padding: 0.3rem;
+}
+
+.programme{
+    color: #eee;
+}
+
+.programme{
+    width: 30%;
+    height: 100%;
+    background: #2e2d2c;
+    box-shadow: -10px 3px 15px rgba(14, 14, 20, 0.5);
+}
+
+.monthRdv{
+    width: 100%;
+    height: 80%;
+    /* background: pink; */
+    padding: 1rem;
+}
+
+.monthRdv h2{
+    text-transform: uppercase;
+    margin-bottom: 2rem;
+}
+
+.rdvList li{
+    position: relative;
+    margin-top: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.rdvList li span{
+    opacity: .5;
+}
+
+.rdvList li::before{
+    content: "";
+    width: .7rem;
+    height: .7rem;
+    display: block;
+    background: #08C5BB;
+    position: absolute;
+    left: -1.25rem;
+    top: .5rem;
+    border-radius: 50%;
+    box-shadow: 0 0 15px rgba(14, 14, 20, 1);
+}
+
+.rdvList li:nth-of-type(odd)::before{
+    background: #ff7c01;
+}
+
+/*------------------------------------------- FOR PATIENTS ----------------------------------------------*/
+
+.patients{
+    flex-direction: column;
+}
+
+.patients_list{
+    width: 100%;
+    height: 65vh;
+    display: flex;
+    gap: 1rem;
+    /* background: red; */
+    margin-top: 3rem;
+}
+
+.list{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    /* background: greenyellow; */
+    gap: 1rem;
+}
+
+.list_head{
+    width: 100%;
+    display: flex;
+    background: #8299ff;
+    padding-right: 1rem;
+    color: #FFFFFF;
+    text-transform: capitalize;
+    font-weight: bold;
+    letter-spacing: 1.5px;
+}
+
+.list_infos{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    overflow-y: scroll;
+}
+
+.list_infos::-webkit-scrollbar{
+    width: 1vw;
+    /* box-shadow: 0 0 15px rgba(37, 37, 143, 0.5); */
+}
+
+.list_infos::-webkit-scrollbar-thumb{
+    background: #0addd2;
+    border-radius: 15px;
+    transition: 3s ease;
+    box-shadow: 0 0 15px rgba(12, 194, 200, 0.5);
+}
+
+.list_infos::-webkit-scrollbar-thumb:hover{
+    background: #08C5BB;
+}
+
+.list_infos::-webkit-scrollbar-track{
+    background: #012FFF;
+    border-radius: 15px;
+}
+
+.list_info{
+    width: calc(100% - .5rem);
+    display: flex;
+    background: #FFFFFF;
+    transition: .3s ease-in-out;
+}
+
+.list_info.active{
+    background: #ff7c01;
+    color: #FFFFFF;
+}
+
+/* .list_info:not(.active):hover{
+    background: #ff7c01c0;
+} */
+
+.list_head div, .list_info div{
+    height: 3.5rem;
+    display: flex;
+    align-items: center;
+    padding: .5rem;
+    /* background: #012FFF; */
+}
+
+.list_head div:not(:nth-last-child(1)), .list_info div:not(:nth-last-child(1)){
+    width: calc(100% / 5 + 2.5%);
+}
+
+.list_head div:nth-last-child(1), .list_info div:nth-last-child(1){
+    width: 10%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.list_info img{
+    height: 3rem;
+    border-radius: 50%;
+}
