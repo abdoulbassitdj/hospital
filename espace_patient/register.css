@@ -33,7 +33,7 @@ form{
     flex-wrap: wrap;
     background: #08C5BB;
     padding: 1rem;
-    transform: skewX(-5deg) translateX(-1.3rem);
+    /* transform: skewX(-5deg) translateX(-1.3rem); */
     border-radius: 15px;
     padding-left: 2rem;
     position: relative;
@@ -43,7 +43,7 @@ form{
 form > *{
     width: 40%;
     height: 2.5rem;
-    transform: skewX(5deg);
+    /* transform: skewX(5deg); */
 }
 
 input,select{
@@ -55,7 +55,8 @@ input,select{
 }
 
 input[type="file"]{
-    transform: translateX(-50%);
+    margin-top: 1.2rem;
+    /* transform: translateX(-50%); */
     border: none;
 }
 
@@ -74,9 +75,9 @@ input::placeholder{
     height: 3.5rem;
     display: flex;
     background: pink;
-    position: absolute;
-    bottom: 3rem;
-    right: -3rem;
+    /* position: absolute; */
+    /* bottom: 3rem;
+    right: -10rem; */
     box-shadow: 0 0 10px rgba(0, 0, 0, .3);
     border-radius: 7px;
 }
@@ -112,6 +113,11 @@ input::placeholder{
     border-radius: 15px;
     z-index: 1;
     box-shadow: 0 0 10px rgba(168, 168, 168, 0.3);
+}
+
+.logo{
+    width: 15rem;
+    margin-top: -5rem;
 }
 
 .illustration > *{

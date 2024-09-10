@@ -12,7 +12,7 @@ $result=mysqli_query($con,$req);
 
 if($result){
     echo "success!";
-    header("location: patient.php");
+    header("location: patient.php?onglet=rendez-vous");
 } else {
     echo "failure! <br>".mysqli_error($con);
 }

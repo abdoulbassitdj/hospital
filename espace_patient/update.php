@@ -1,6 +1,9 @@
 <?php
 
+session_start();
+
 require_once "../auto/config.php";
+require_once "../auto/session-verif.php";
 
 foreach($_POST as $key => $val){
 
@@ -31,22 +34,32 @@ if($full and filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)){
 
     if (password_verify($cpass, $pass)) {
         
-        $req="INSERT INTO `patient`(`nom_complet`, `sexe`, `date_naissance`, `domicile`, `tel`, `email`, `photo`, `login`, `pass`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
+        $req="UPDATE `patient` SET `nom_complet` = ?, `sexe` = ?, `date_naissance` = ?, `domicile` = ?, `tel` = ?, `email` = ?, `photo` = ?, `login` = ?, `pass` = ? WHERE id = ?";
         $stmt = mysqli_stmt_init($con);
 
         if (!mysqli_stmt_prepare($stmt, $req)) {
-        
-           echo "Something went wrong !"; 
+
+            echo "Something went wrong !";
 
         } else {
 
-            mysqli_stmt_bind_param($stmt, "ssssissss", $nom, $sexe, $date, $addresse, $tel, $email, $chemin, $uname, $pass);
+            mysqli_stmt_bind_param($stmt, "ssssissssi", $nom, $sexe, $date, $addresse, $tel, $email, $chemin, $uname, $pass, $_SESSION["id"]);
             mysqli_stmt_execute($stmt);
             // $result=mysqli_stmt_get_result($stmt);
 
+            if(mysqli_stmt_affected_rows($stmt) > 0){
+
+                header("location:patient.php?onglet=profile");
+    
+            } else {
+
+                // var_dump($result);
+    
+                echo "<br>echec".mysqli_error($con);
+    
+            }
         }
 
-        header("location:connect.php");
 
     } else {
 
@@ -54,8 +67,6 @@ if($full and filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)){
 
     }
 
-} else {
-    echo "Remplissez tous les champs correctement.";
 }
 
 

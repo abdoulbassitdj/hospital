@@ -204,7 +204,7 @@ main section{
     height: 15rem;
 } */
 
-/*------------------------------------------- FOR RENDEZ VOUS ----------------------------------------------*/
+/*------------------------------------------- FOR PERSONNEL ----------------------------------------------*/
 
 .personnel{
     flex-direction: column;
@@ -259,8 +259,13 @@ main section{
     margin-top: .5rem;
 }
 
+.employe strong{
+    text-transform: capitalize;
+}
+
 .employes img{
     width: 40%;
+    aspect-ratio: 1/1;
     border-radius: 50%;
 }
 
@@ -537,4 +542,11 @@ main section{
 .list_info img{
     height: 3rem;
     border-radius: 50%;
+}
+
+.dev{
+    background: #ff7c01;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

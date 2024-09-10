@@ -1,25 +1,25 @@
 <?php
-include "../auto/config.php";
-include "../menu_footer.php";
+
 session_start();
+require_once "../auto/session-verif.php";
+
+include "../auto/config.php";
 
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Espace Docteur</title>
-    <!-- <link rel="stylesheet" href="../assets/css/menu.css">
-    <link rel="stylesheet" href="../assets/css/footer.css"> -->
     <link rel="stylesheet" href="../assets/fonts/icomoon/style.css">
     <link rel="stylesheet" href="../fonts/icofont/icofont.css">
     <link rel="stylesheet" href="../assets/css/animation.css">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="calendar.css">
-    <link rel="stylesheet" href="../assets/css/list.css">
+    <link rel="stylesheet" href="../assets/css/list2.css">
 </head>
 <body>
 
@@ -30,28 +30,29 @@ session_start();
             <div class="group">
                 <img src="../images/doctors/doctor4.jpg" alt="">
                 <p class="nomD">Dr. <?php echo $_SESSION['nom']; ?></p>
-                <p>Gynecology</p>
+                <p><?php echo $_SESSION['qualif']; ?></p>
             </div>
 
-            <div class="group item" data-service="overview">
+            <div class="group item active" data-service="overview">
                 <p><i class="icofont-chart-bar-graph"></i> overview</p>
             </div>
 
-            <div class="group item active" data-service="rendez_vous">
+            <div class="group item" data-service="rendez_vous">
                 <p><i class="icofont-ui-calendar"></i> rendez-vous</p>
-            </div>
-
-            <div class="group item" data-service="messages">
-                <p><i class="icofont-ui-text-chat"></i> messages</p>
             </div>
 
             <div class="group item" data-service="patients">
                 <p><i class="icofont-crutch"></i> patients</p>
             </div>
+
+            <div class="group item logout" data-service="">
+                <i class="icon-log-out"></i>
+                <a href="connect.php?message=3">logout</a>
+            </div>
             
         </aside>
 
-        <section class="service overview" data-service="overview">
+        <section class="service overview show" data-service="overview">
         
             <div class="greeting">
                 <div>
@@ -192,11 +193,11 @@ session_start();
 
         </section>
 
-        <section class="service rendez_vous show" data-service="rendez_vous">
+        <section class="service rendez_vous" data-service="rendez_vous">
 
             <h4><span><?php echo $rdv_await[0]; ?></span>Rendez-vous en attente d'approbation</h4>
 
-            <div class="rdvNegatives">
+            <div class="rendez_vous_container">
 
                 <?php
                     $req="SELECT  booking.*, patient.nom_complet, patient.photo, patient.id AS patient FROM `booking`,`patient`,`docteur` WHERE booking.id_patient = patient.id AND booking.id_docteur = patient.id_docteur AND booking.id_docteur = docteur.id AND booking.id_docteur = $_SESSION[id] AND status = 'attente'";
@@ -229,7 +230,7 @@ session_start();
 
             <h4><span><?php echo $rdv_accepted[0]; ?></span>Rendez-vous acceptés</h4>
 
-            <div class="rdvNegatives">
+            <div class="rendez_vous_container">
 
 
                 <?php
@@ -259,7 +260,7 @@ session_start();
 
             <h4><span><?php echo $rdv_refused[0]; ?></span>Rendez-vous refusés</h4>
 
-            <div class="rdvNegatives">
+            <div class="rendez_vous_container">
 
                 <?php
                     $req="SELECT  booking.*, patient.nom_complet, patient.photo,  patient.id AS patient FROM `booking`,`patient`, `docteur` WHERE booking.id_patient = patient.id AND booking.id_docteur = patient.id_docteur AND booking.id_docteur = docteur.id AND booking.id_docteur = $_SESSION[id] AND status = 'refusé'";
@@ -289,7 +290,7 @@ session_start();
 
             <h4><span><?php echo $rdv_canceled[0]; ?></span>Rendez-vous annulés</h4>
 
-            <div class="rdvNegatives">
+            <div class="rendez_vous_container">
 
                 <?php
                     $req="SELECT  booking.*, patient.nom_complet, patient.photo,  patient.id AS patient FROM `booking`,`patient`, `docteur` WHERE booking.id_patient = patient.id AND booking.id_docteur = patient.id_docteur AND booking.id_docteur = docteur.id AND booking.id_docteur = $_SESSION[id] AND status = 'annulé'";
@@ -376,8 +377,6 @@ session_start();
 
         </section>
 
-        <section class="service messages" data-service="messages">messages</section>
-
         <section class="service patients" data-service="patients">
 
             <?php
@@ -401,7 +400,7 @@ session_start();
 
                     <div class="list_head">
                         <div>nom complet</div>
-                        <div>age</div>
+                        <div>date de naissance</div>
                         <div>sexe</div>
                         <div>adresse</div>
                     </div>
@@ -414,7 +413,7 @@ session_start();
                                 while ($patient = mysqli_fetch_array($result)) { ?>
                                 <div class="list_info" data-service="<?php echo $patient['id']; ?>">
                                     <div><?php echo $patient['nom_complet']; ?></div>
-                                    <div><?php echo $patient['age']; ?></div>
+                                    <div><?php echo $patient['date_naissance']; ?></div>
                                     <div><?php echo $patient['sexe']; ?></div>
                                     <div><?php echo $patient['domicile']; ?></div>
                                 </div>
@@ -489,11 +488,10 @@ session_start();
 
     </main>
 
-
-<!-- <script src="../assets/js/menu.js"></script> -->
 <script src="../assets/js/animation.js"></script>
-<script src="../assets/js/list.js"></script>
+<script src="../assets/js/list2.js"></script>
 <script src="calendar.js"></script>
 <script src="script.js"></script>
+
 </body>
 </html>

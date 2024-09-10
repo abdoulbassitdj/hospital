@@ -1,18 +1,16 @@
 <?php
-include "../menu_footer.php";
+
 include "../auto/config.php";
 
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Espace Receptionniste</title>
-    <link rel="stylesheet" href="../assets/css/menu.css">
-    <link rel="stylesheet" href="../assets/css/footer.css">
     <link rel="stylesheet" href="../assets/fonts/icomoon/style.css">
     <link rel="stylesheet" href="../fonts/icofont/icofont.css">
     <link rel="stylesheet" href="../assets/css/animation.css">
@@ -22,7 +20,7 @@ include "../auto/config.php";
 </head>
 <body>
     
-    <header><?php menu("../","../"); ?></header>
+    <header></header>
 
     <main>
 
@@ -466,7 +464,7 @@ include "../auto/config.php";
 
     </main>
 
-    <footer><?php footer(); ?></footer>
+    <footer></footer>
 
 
 <script src="../assets/js/menu.js"></script>

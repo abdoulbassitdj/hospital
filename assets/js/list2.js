@@ -1,55 +1,31 @@
-buttons=document.querySelectorAll('.item');
-sections=document.querySelectorAll('.service');
+In=document.querySelectorAll('.item');
+Out=document.querySelectorAll('.service');
 items=document.querySelector('.items');
+// main = document.getElementsByTagName("main");
 
-document.addEventListener('DOMContentLoaded', (event) => {
-    let params = new URLSearchParams(window.location.search);
-    let onglet = params.get('onglet');
+In.forEach((element, index) => {
 
-    if (onglet) {
-        showOnglet(onglet);
-    }
-});
+    element.onclick = () => {
 
-buttons.forEach(button => {
+        // main.querySelector('.service').classList.remove('show');
 
-    button.onclick = function () {
-        const page = this.getAttribute("data-service");
-        showOnglet(page);
-        // alert(page);
-    }
+        for(i=0;i<Out.length;i++){
 
-});
-
-function showOnglet(page){
-
-    sections.forEach((section, index) => {
-
-        if(section.getAttribute("data-service") == page){
-            // alert(index);
-            section.classList.add("show");
-
-            items.querySelector('.active').classList.remove('active');
-            buttons[index].classList.add('active');
-
-            nav.classList.remove("nav_visible");
-
-            let params = new URLSearchParams(window.location.search);
-            onglet = section.getAttribute("data-service");
-            params.set('onglet', onglet);
-            window.history.replaceState({}, '', `${window.location.pathname}?${params.toString()}`); 
-
-        } else {
-            section.classList.remove("show");
+            if(Out[i].getAttribute("data-service") == element.getAttribute("data-service")){
+                Out[i].classList.add("show");
+            } else {
+                Out[i].classList.remove("show");
+            }
         }
-        
-    })
 
-}
+        items.querySelector('.active').classList.remove('active');
+        element.classList.add('active');
+    }
+});
 
-// FOR MEDICAL RECORDS, PATIENT PAGE
+// FOR MEDICAL RECORDS
 
-dossier=document.querySelectorAll('.open_dossier');
+dossier=document.querySelectorAll('.dossier');
 content=document.querySelectorAll('.content');
 dossiers=document.querySelector('.dossiers');
 closeContent=document.querySelectorAll('.close');
@@ -79,7 +55,7 @@ dossier.forEach(element => {
     }
 });
 
-// TO CLOSE THE CONTENT PART, MEDICAL RECORDS
+// TO CLOSE THE CONTENT PART
 
 closeContent.forEach(element => {
     element.onclick = () => {
@@ -89,9 +65,31 @@ closeContent.forEach(element => {
     }
 });
 
-// PREV / NEXT THE CONTENT PART, MEDICAL RECORDS
-
 // FOR MEDICAL RECORDS DETAIL
+
+openDetail = document.querySelectorAll('.toOpen');
+door = document.querySelectorAll('.contentItem');
+contenu = document.querySelector('.dossierContents');
+
+door.forEach(element => {
+    element.querySelector('.toOpen').onclick = () => {
+
+        verify = contenu.querySelector('.open');
+
+        if (verify) {
+            //alert('verify');
+            verify.classList.remove('open');
+        }
+
+        element.classList.add('open');
+
+    }
+    element.querySelector('.toClose').onclick = () => {
+
+        element.classList.remove('open');
+
+    }
+});
 
 
 // FOR PATIENTS LIST DOCTOR PAGE

@@ -12,6 +12,7 @@
 
 main{
     min-height:100vh;
+    padding-top: 4rem;
 }
 
 button{
@@ -49,6 +50,90 @@ button{
     text-transform: uppercase;
     font-weight: bold;
     border-radius: 7px;
+}
+
+/* ================================== HERO ======================================= */
+
+.hero{
+    width: 100%;
+    height: calc(100vh - 4rem);
+    display: grid;
+    /* grid-template-columns: 70% 30%; */
+    background: url("../../images/slider1/people1_background.png.jpg") fixed;
+    background-size: cover;
+    /* padding-top: 4rem; */
+    /* background: gray; */
+    
+    .conteneur{
+
+        background: #0130ff86;
+
+
+        *{
+            z-index: 4;
+        }
+    
+        p{
+            font-family: roboto;
+        }
+    
+        h2 {
+            font-size: 2.3rem;
+            color: #FFFFFF;
+        }
+    
+        img{
+            width: 35rem;
+            position: absolute;
+            bottom: 0;
+            right: 5rem;
+        }
+    
+        ::after{
+            content: "";
+            display: block;
+            width: 100%;
+            height: 100%;
+            /* background: #0130ff; */
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: .5;
+            z-index: -1;
+        }
+    
+        .hero_text{
+            width: 70%;
+            height: 80%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            /* background: #0130ff86; */
+
+            .register{
+                margin-top: 2rem;
+            }
+    
+            a{
+                width: fit-content;
+                height: 3rem;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                padding: 0 1rem;
+                background: #ff7c01;
+                color: #FFFFFF;
+                border: 3px solid transparent;
+                font-size: 1.1rem;
+                transition: all 0.5s ease;
+                cursor: pointer;
+                text-transform: capitalize;
+                border-radius: 7px;
+                font-family: roboto;
+            }
+        }
+    }
 }
 
 /* =============================== ABOUT SECTION ==================================*/
@@ -168,6 +253,15 @@ main .services h2{
     border-radius: 5px;
     background: #012FFF;
     color: #FFFFFF;
+    transition: all 300ms ease-in-out;
+}
+
+.item:hover{
+    background: #08C5BB;
+}
+
+.item.active{
+    background: #ff7c01;
 }
 
 .services_list h3{
@@ -262,7 +356,7 @@ main .services h2{
     background: #FFFFFF;
     margin: 1rem;
     padding: 1rem;
-    box-shadow: 3px 3px 20px rgba(68, 45, 45, 0.3);
+    box-shadow: 0 0 10px rgba(68, 45, 45, 0.3);
     border-radius: 7px;
     transition: 1s;
 }

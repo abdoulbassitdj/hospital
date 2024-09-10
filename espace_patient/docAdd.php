@@ -11,7 +11,7 @@ $result=mysqli_query($con,$req);
 
 if($result){
     echo "success!";
-    header("location: patient.php");
+    header("location: patient.php?onglet=dashboard");
 }
 
 ?>

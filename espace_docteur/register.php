@@ -4,7 +4,7 @@ include "../menu_footer.php";
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -46,7 +46,7 @@ include "../menu_footer.php";
             <div class="illustration">
                 <h2>completez votre compte</h2>
                 <p>Pour pouvoir gerer vos patients, enregistrer des dossiers medicales ou contacter vos collegues.</p>
-                <button class="btn_con"><a href="connectD.php">connection</a></button>
+                <button class="btn_con"><a href="connect.php">connection</a></button>
             </div>
         </section>
     </main>

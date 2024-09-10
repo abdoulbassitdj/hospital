@@ -6,16 +6,12 @@
     display: flex;
 }
 
-.service.dashboard.show{
-    display: grid;
-}
-
 .content{
     display: none;
 }
 
 .content.show{
-    display: grid;
+    display: flex;
 }
 
 .data{

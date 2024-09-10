@@ -1,5 +1,6 @@
 <?php
-include "../menu_footer.php";
+
+include "../auto/messages.php";
 
 ?>
 
@@ -10,28 +11,30 @@ include "../menu_footer.php";
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>connexion compte docteur</title>
-    <link rel="stylesheet" href="../assets/css/menu.css">
-    <link rel="stylesheet" href="../assets/css/footer.css">
     <link rel="stylesheet" href="../assets/fonts/icomoon/style.css">
     <link rel="stylesheet" href="../assets/css/animation.css">
-    <link rel="stylesheet" href="connectD.css">
-    <link rel="stylesheet" href="../assets/css/footer.css">
+    <link rel="stylesheet" href="connect.css">
 </head>
 <body>
 
     <header>
-        <?php menu("../",""); ?>
     </header>
 
     <main>
 
         <form action="loginD.php" method="post" class="connect">
 
+            <a href="/hospital/index.php"><img src="../assets/images/logo_hospital_2.png" alt="" class="logo"></a>
+
             <h2>Connectez vous <br> Pour suivre vos patients</h2>
 
+            <div class="boite_message">
+                <?php if (!empty($text)): ?>
+                    <p class="message" id="message"><?php echo $text; ?></p>
+                <?php endif ?>
+            </div>
 
             <input type="text" name="login" placeholder="Login">
-
             <input type="password" name="pass" placeholder="Pass">
 
             <div class="link_forgot">
@@ -45,19 +48,11 @@ include "../menu_footer.php";
 
         </form>
 
-        <div class="txt">
-            <img src="../images/illustrations/illustration1.png" alt="" class="central">
-            <!-- <div class="status"><h2>patient</h2></div> -->
-        </div>
-
     </main>
 
     <footer>
-        <?php footer(); ?>
     </footer>
 
-
-    <script src="../assets/js/menu.js"></script>
     <script src="../assets/js/animation.js"></script>
 
 </body>

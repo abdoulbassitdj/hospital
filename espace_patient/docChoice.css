@@ -6,12 +6,12 @@
 }
 
 main{
-    min-height: 100vh;
+    /* min-height: 100vh; */
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background: rgb(241, 241, 241);
+    background: #FFFFFF;
 }
 
 h2{
@@ -20,44 +20,21 @@ h2{
     color: #08C5BB;
 }
 
-.rdvNegatives{
-    width: 80%;
-    min-height: 120vh;
+.docteurs{
+    width: 100%;
     /* overflow-y: scroll; */
-    display: flex;
-    /* justify-content: center; */
-    align-items: center;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
     gap: 2rem;
-    flex-wrap: wrap;
-    /* background: rgb(38, 0, 128); */
     padding: 3rem;
     margin-bottom: 1rem;
 }
 
-.rdvNegatives::-webkit-scrollbar{
-    /* width: 1vw; */
-    /* box-shadow: 0 0 15px rgba(37, 37, 143, 0.5); */
-}
 
-/* .rdvNegatives::-webkit-scrollbar-thumb{
-    background: #0addd2;
-    border-radius: 15px;
-    transition: 3s ease;
-    box-shadow: 0 0 15px rgba(12, 194, 200, 0.5);
-}
 
-.rdvNegatives::-webkit-scrollbar-thumb:hover{
-    background: #08C5BB;
-}
-
-.rdvNegatives::-webkit-scrollbar-track{
-    background: #012FFF;
-    border-radius: 15px;
-} */
-
-.rdv{
-    width: calc(100% / 4 - 1.5rem);
-    height: 20rem;
+.docteur{
+    grid-column: span 2;
+    height: 15rem;
     display: flex;
     flex-direction: column;
     /* justify-content: center; */
@@ -70,38 +47,27 @@ h2{
     box-shadow: 3px 3px 7px rgba(30, 30, 42, 0.3);
 }
 
-.rdv p:nth-of-type(2) strong {
-    min-width: 2rem;
-    height: 2rem;
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    background: #ff7c01;
-    color: #FFFFFF;
-    border-radius: 15px;
+.docteur p:nth-of-type(2){
+    margin-bottom: 1rem;
 }
 
-.rdv p {
+.docteur p {
     text-align: center;
     margin: .3rem 0;
 }
 
-.rdvNegatives img{
+.docteurs img{
     width: 40%;
+    aspect-ratio: 1/1;
     border-radius: 50%;
     margin-bottom: 1rem;
 
 }
 
-/* .purchaser{
-    margin: 1rem 1rem 0;
-} */
-
 .acceptation{
     width: 100%;
     height: 15%;
     display: flex;
-    /* background: #7faca9; */
     position: absolute;
     bottom: 0;
     border-top: 1px solid rgb(211, 211, 211);
@@ -113,8 +79,8 @@ h2{
     display: inline-flex;
     justify-content: center;
     align-items: center;
-    /* background: purple; */
     text-decoration: none;
+    text-transform: uppercase;
 }
 
 .approve{
@@ -127,22 +93,6 @@ h2{
     color: rgb(251, 45, 45);
 }
 
-.rdvMessage{
-    position: absolute;
-    top: 1rem;
-    right: 1rem;
-}
-
-.rdvMessage i{
-    font-size: 2rem;
-    color: rgb(1, 228, 1);
-}
-
 .dec i{
     color: rgb(251, 45, 45);
-}
-
-.rdvMessage i:hover{
-    color: rgb(211, 211, 211);
-    cursor: pointer;
 }

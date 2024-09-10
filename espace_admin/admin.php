@@ -2,10 +2,14 @@
 
 session_start();
 
+require_once("../auto/recupDocteurs.php");
+require_once("../auto/recupReceptionist.php");
+
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -16,10 +20,11 @@ session_start();
     <link rel="stylesheet" href="../assets/css/animation.css">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="calendar.css">
-    <link rel="stylesheet" href="../assets/css/list.css">
+    <link rel="stylesheet" href="../assets/css/list2.css">
 </head>
+
 <body>
-    
+
     <header></header>
 
     <main>
@@ -44,11 +49,15 @@ session_start();
                 <p><i class="icofont-ui-calendar"></i> receptionnistes</p>
             </div>
 
-            
+
         </aside>
 
         <section class="service overview show" data-service="overview">
-        
+
+            <div class="greeting dev">
+                <h2 class="name">EN COURS DE DEVELOPPEMENT !</span></h2>
+            </div>
+
             <div class="greeting">
                 <div>
                     <h2 class="name">Hello, <span><?php echo $_SESSION['nom'] ?> !</span></h2>
@@ -64,7 +73,7 @@ session_start();
                     <i class="icofont-stethoscope-alt"></i>
                     <div>
                         <p>Nombre des patients</p>
-                        <span>4565</span>
+                        <span>N/A</span>
                     </div>
                 </div>
 
@@ -72,7 +81,7 @@ session_start();
                     <i class="icofont-clock-time"></i>
                     <div>
                         <p>Rendez-vous en attente</p>
-                        <span>123</span>
+                        <span>N/A</span>
                     </div>
                 </div>
 
@@ -80,7 +89,7 @@ session_start();
                     <i class="icofont-meeting-add"></i>
                     <div>
                         <p>Tous les rendez-vous</p>
-                        <span>4565</span>
+                        <span>N/A</span>
                     </div>
                 </div>
 
@@ -88,7 +97,7 @@ session_start();
                     <i class="icofont-stethoscope"></i>
                     <div>
                         <p>Nombre des patients</p>
-                        <span>4565</span>
+                        <span>N/A</span>
                     </div>
                 </div>
 
@@ -100,7 +109,7 @@ session_start();
 
         <section class="service personnel" data-service="docteurs">
 
-            <h4><span>6</span>Docteurs sont actifs</h4>
+            <h4><span>N/A</span>Docteurs sont actifs</h4>
 
             <div class="add_doc">
                 <div>
@@ -122,84 +131,23 @@ session_start();
             </div>
 
             <div class="employes" id="list_doc">
-                <div class="employe">
-                    <img src="../images/users/9d8297540e9c12a4543dce13a88db03e.jpg" alt="">
-                    <p class="purchaser"><strong>Sophie Bergham</strong></p>
-                    <p>specialite: <strong>Gynecolgue</strong></p>
-                    <p>patients: <strong>18</strong></p>
-                    <div class="acceptation">
-                        <a href="acceptation.php?status=declined" class="decline">Supprimer</a>
-                    </div>
-                </div>
 
-                <div class="employe">
-                    <img src="../images/users/9d8297540e9c12a4543dce13a88db03e.jpg" alt="">
-                    <p class="purchaser"><strong>Sophie Bergham</strong></p>
-                    <p>specialite: <strong>Gynecolgue</strong></p>
-                    <p>patients: <strong>18</strong></p>
-                    <div class="acceptation">
-                        <a href="acceptation.php?status=declined" class="decline">Supprimer</a>
-                    </div>
-                </div>
+                <?php $doctors = mysqli_fetch_all($doctors, MYSQLI_ASSOC); ?>
 
-                <div class="employe">
-                    <img src="../images/users/9d8297540e9c12a4543dce13a88db03e.jpg" alt="">
-                    <p class="purchaser"><strong>Sophie Bergham</strong></p>
-                    <p>specialite: <strong>Gynecolgue</strong></p>
-                    <p>patients: <strong>18</strong></p>
-                    <div class="acceptation">
-                        <a href="acceptation.php?status=declined" class="decline">Supprimer</a>
-                    </div>
-                </div>
+                <?php foreach ($doctors as $doctor) : ?>
 
-                <div class="employe">
-                    <img src="../images/users/9d8297540e9c12a4543dce13a88db03e.jpg" alt="">
-                    <p class="purchaser"><strong>Sophie Bergham</strong></p>
-                    <p>specialite: <strong>Gynecolgue</strong></p>
-                    <p>patients: <strong>18</strong></p>
-                    <div class="acceptation">
-                        <a href="acceptation.php?status=declined" class="decline">Supprimer</a>
+                    <div class="employe">
+                        <img src="<?php echo $doctor['photo']; ?>" alt="">
+                        <p class="purchaser"><strong><?php echo $doctor['nom_complet']; ?></strong></p>
+                        <p>specialite: <strong><?php echo $doctor['qualif']; ?></strong></p>
+                        <p>matricule: <strong><?php echo $doctor['matricule']; ?></strong></p>
+                        <div class="acceptation">
+                            <a href="acceptation.php?id=<?php echo $doctor['id']; ?>" class="decline">Supprimer</a>
+                        </div>
                     </div>
-                </div>
-                <div class="employe">
-                    <img src="../images/users/9d8297540e9c12a4543dce13a88db03e.jpg" alt="">
-                    <p class="purchaser"><strong>Sophie Bergham</strong></p>
-                    <p>specialite: <strong>Gynecolgue</strong></p>
-                    <p>patients: <strong>18</strong></p>
-                    <div class="acceptation">
-                        <a href="acceptation.php?status=declined" class="decline">Supprimer</a>
-                    </div>
-                </div>
 
-                <div class="employe">
-                    <img src="../images/users/9d8297540e9c12a4543dce13a88db03e.jpg" alt="">
-                    <p class="purchaser"><strong>Sophie Bergham</strong></p>
-                    <p>specialite: <strong>Gynecolgue</strong></p>
-                    <p>patients: <strong>18</strong></p>
-                    <div class="acceptation">
-                        <a href="acceptation.php?status=declined" class="decline">Supprimer</a>
-                    </div>
-                </div>
+                <?php endforeach; ?>
 
-                <div class="employe">
-                    <img src="../images/users/9d8297540e9c12a4543dce13a88db03e.jpg" alt="">
-                    <p class="purchaser"><strong>Sophie Bergham</strong></p>
-                    <p>specialite: <strong>Gynecolgue</strong></p>
-                    <p>patients: <strong>18</strong></p>
-                    <div class="acceptation">
-                        <a href="acceptation.php?status=declined" class="decline">Supprimer</a>
-                    </div>
-                </div>
-
-                <div class="employe">
-                    <img src="../images/users/9d8297540e9c12a4543dce13a88db03e.jpg" alt="">
-                    <p class="purchaser"><strong>Sophie Bergham</strong></p>
-                    <p>specialite: <strong>Gynecolgue</strong></p>
-                    <p>patients: <strong>18</strong></p>
-                    <div class="acceptation">
-                        <a href="acceptation.php?status=declined" class="decline">Supprimer</a>
-                    </div>
-                </div>
             </div>
 
         </section>
@@ -228,97 +176,114 @@ session_start();
             </div>
 
             <div class="employes" id="list_doc">
+
+                <?php $receptionistes = mysqli_fetch_all($receptionistes, MYSQLI_ASSOC); ?>
+
+                <?php foreach ($receptionistes as $receptioniste) : ?>
+
+                    <div class="employe">
+                        <img src="<?php echo $receptioniste['photo']; ?>" alt="">
+                        <p class="purchaser"><strong><?php echo $receptioniste['nom_complet']; ?></strong></p>
+                        <p>specialite: <strong><?php echo $receptioniste['qualif']; ?></strong></p>
+                        <p>matricule: <strong><?php echo $receptioniste['matricule']; ?></strong></p>
+                        <div class="acceptation">
+                            <a href="acceptation.php?id=<?php echo $receptioniste['id']; ?>" class="decline">Supprimer</a>
+                        </div>
+                    </div>
+
+                <?php endforeach; ?>
+
                 <div class="employe">
-                    
+
                     <img src="../images/users/9d8297540e9c12a4543dce13a88db03e.jpg" alt="">
                     <p class="purchaser"><strong>Sophie Bergham</strong></p>
                     <p>specialite: <strong>Gynecolgue</strong></p>
                     <p>patients: <strong>18</strong></p>
                     <div class="acceptation">
-                        
+
                         <a href="acceptation.php?status=declined" class="decline">Supprimer</a>
                     </div>
                 </div>
 
                 <div class="employe">
-                    
+
                     <img src="../images/users/9d8297540e9c12a4543dce13a88db03e.jpg" alt="">
                     <p class="purchaser"><strong>Sophie Bergham</strong></p>
                     <p>specialite: <strong>Gynecolgue</strong></p>
                     <p>patients: <strong>18</strong></p>
                     <div class="acceptation">
-                        
+
                         <a href="acceptation.php?status=declined" class="decline">Supprimer</a>
                     </div>
                 </div>
 
                 <div class="employe">
-                    
+
                     <img src="../images/users/9d8297540e9c12a4543dce13a88db03e.jpg" alt="">
                     <p class="purchaser"><strong>Sophie Bergham</strong></p>
                     <p>specialite: <strong>Gynecolgue</strong></p>
                     <p>patients: <strong>18</strong></p>
                     <div class="acceptation">
-                        
+
                         <a href="acceptation.php?status=declined" class="decline">Supprimer</a>
                     </div>
                 </div>
 
                 <div class="employe">
-                    
+
                     <img src="../images/users/9d8297540e9c12a4543dce13a88db03e.jpg" alt="">
                     <p class="purchaser"><strong>Sophie Bergham</strong></p>
                     <p>specialite: <strong>Gynecolgue</strong></p>
                     <p>patients: <strong>18</strong></p>
                     <div class="acceptation">
-                        
+
                         <a href="acceptation.php?status=declined" class="decline">Supprimer</a>
                     </div>
                 </div>
                 <div class="employe">
-                    
+
                     <img src="../images/users/9d8297540e9c12a4543dce13a88db03e.jpg" alt="">
                     <p class="purchaser"><strong>Sophie Bergham</strong></p>
                     <p>specialite: <strong>Gynecolgue</strong></p>
                     <p>patients: <strong>18</strong></p>
                     <div class="acceptation">
-                        
+
                         <a href="acceptation.php?status=declined" class="decline">Supprimer</a>
                     </div>
                 </div>
 
                 <div class="employe">
-                    
+
                     <img src="../images/users/9d8297540e9c12a4543dce13a88db03e.jpg" alt="">
                     <p class="purchaser"><strong>Sophie Bergham</strong></p>
                     <p>specialite: <strong>Gynecolgue</strong></p>
                     <p>patients: <strong>18</strong></p>
                     <div class="acceptation">
-                        
+
                         <a href="acceptation.php?status=declined" class="decline">Supprimer</a>
                     </div>
                 </div>
 
                 <div class="employe">
-                    
+
                     <img src="../images/users/9d8297540e9c12a4543dce13a88db03e.jpg" alt="">
                     <p class="purchaser"><strong>Sophie Bergham</strong></p>
                     <p>specialite: <strong>Gynecolgue</strong></p>
                     <p>patients: <strong>18</strong></p>
                     <div class="acceptation">
-                        
+
                         <a href="acceptation.php?status=declined" class="decline">Supprimer</a>
                     </div>
                 </div>
 
                 <div class="employe">
-                    
+
                     <img src="../images/users/9d8297540e9c12a4543dce13a88db03e.jpg" alt="">
                     <p class="purchaser"><strong>Sophie Bergham</strong></p>
                     <p>specialite: <strong>Gynecolgue</strong></p>
                     <p>patients: <strong>18</strong></p>
                     <div class="acceptation">
-                        
+
                         <a href="acceptation.php?status=declined" class="decline">Supprimer</a>
                     </div>
                 </div>
@@ -330,9 +295,10 @@ session_start();
 
     <footer></footer>
 
-<script src="../assets/js/animation.js"></script>
-<script src="../assets/js/list.js"></script>
-<script src="calendar.js"></script>
-<script src="script.js"></script>
+    <script src="../assets/js/animation.js"></script>
+    <script src="../assets/js/list2.js"></script>
+    <script src="calendar.js"></script>
+    <script src="script.js"></script>
 </body>
+
 </html>

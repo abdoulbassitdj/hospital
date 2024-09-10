@@ -1,34 +1,40 @@
 <?php
-include "../menu_footer.php";
+
+include "../auto/messages.php";
 
 ?>
 
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>connexion compte patient</title>
-    <link rel="stylesheet" href="../assets/css/menu.css">
-    <link rel="stylesheet" href="../assets/css/footer.css">
+    <title>connexion compte admin</title>
     <link rel="stylesheet" href="../assets/fonts/icomoon/style.css">
     <link rel="stylesheet" href="../assets/css/animation.css">
-    <link rel="stylesheet" href="connectP.css">
-    <link rel="stylesheet" href="../assets/css/footer.css">
+    <link rel="stylesheet" href="connect.css">
 </head>
+
 <body>
 
     <header>
-        <?php menu("../",""); ?>
     </header>
 
     <main>
 
-        <form action="loginP.php" method="post" class="connect">
+        <form action="loginA.php" method="post" class="connect">
 
-            <h2>Connectez vous pour avoir acces <br> a votre dossier medical et d'autres services</h2>
+            <a href="/hospital/index.php"><img src="../assets/images/logo_hospital_2.png" alt="" class="logo"></a>
 
+            <h2>Connectez vous pour administrer <br> votre service</h2>
+
+            <div class="boite_message">
+                <?php if (!empty($text)): ?>
+                    <p class="message" id="message"><?php echo $text; ?></p>
+                <?php endif ?>
+            </div>
 
             <input type="text" name="login" placeholder="Login">
 
@@ -45,22 +51,13 @@ include "../menu_footer.php";
 
         </form>
 
-        <div class="txt">
-            <img src="../images/illustrations/1.png" alt="" class="central">
-            <!-- <div class="status"><h2>patient</h2></div> -->
-            <img src="../images/illustrations/2.png" alt="" class="petit right">
-            <img src="../images/illustrations/4.png" alt="" class="petit third">
-        </div>
-
     </main>
 
     <footer>
-        <?php footer(); ?>
     </footer>
 
-
-    <script src="../assets/js/menu.js"></script>
     <script src="../assets/js/animation.js"></script>
 
 </body>
+
 </html>

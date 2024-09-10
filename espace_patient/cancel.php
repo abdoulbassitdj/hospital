@@ -9,6 +9,7 @@ $result=mysqli_query($con,$req);
 
 if ($result) {
     echo "UPDATED";
+    header("location: patient.php?onglet=rendez-vous");
 }
 
 ?>
