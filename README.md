@@ -28,6 +28,12 @@ Ce projet est une application web de suivi des patients développée en PHP. Il 
 
 ## Captures d'écran
 Quelques images de l'interface sont disponible dans images/captures/ :
+![Texte alternatif](images/captures/home.png)
+![Texte alternatif](images/captures/dashboard.png)
+![Texte alternatif](images/captures/dossiers.png)
+![Texte alternatif](images/captures/dossiers.png)
+![Texte alternatif](images/captures/edit_profil.png)
+
 
 ## Auteur
 - **Abdoul-Bassit Djafarou** - Développeur Principal
