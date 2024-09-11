@@ -28,11 +28,22 @@ Ce projet est une application web de suivi des patients développée en PHP. Il 
 
 ## Captures d'écran
 Quelques images de l'interface sont disponible dans images/captures/ :
-![Texte alternatif](images/captures/home.png)
-![Texte alternatif](images/captures/dashboard.png)
-![Texte alternatif](images/captures/dossiers.png)
-![Texte alternatif](images/captures/dossiers.png)
-![Texte alternatif](images/captures/edit_profil.png)
+
+#### Accueil
+![Image Accueil](images/captures/home.png)
+
+#### Espace patient
+![Image dashboard](images/captures/dashboard.png)
+![Image liste des dossiers](images/captures/dossiers.png)
+![Image dossier ouvert](images/captures/dossier.png)
+![Image rendez-vous](images/captures/rendez-vous.png)
+![Image edit_profil](images/captures/edit_profil.png)
+
+#### Espace docteur
+![Image overview](images/captures/overview.png)
+![Image liste_rdv](images/captures/liste_rdv.png)
+![Image consultation1](images/captures/consultation1.png)
+![Image consultation3](images/captures/consultation3.png)
 
 
 ## Auteur
